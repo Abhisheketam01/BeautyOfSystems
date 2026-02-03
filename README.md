@@ -21,7 +21,7 @@ but to understand **why real systems work the way they do**.
 
 ## Experiments
 
-- [Why Caches Matter](./caches)
+- [Why Caches Matter](./Caches)
 
 ## Philosophy
 
