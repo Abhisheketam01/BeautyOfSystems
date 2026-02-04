@@ -45,3 +45,24 @@ int main() {
 
     printf("Total time (single-threaded): %.2f seconds\n", time_taken);
 }
+
+
+
+
+
+
+
+xplanation:
+
+Tasks A and B run one after another.
+
+Total time ≈ time(taskA) + time(taskB)
+
+Math Proof:
+
+Task	Time (s)
+A	3.0
+B	3.0
+Total	6.0
+
+Concurrency is simulated: tasks appear sequential, but system could switch between them if multitasking.
