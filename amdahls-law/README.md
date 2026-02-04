@@ -173,3 +173,8 @@ How this maps to real systems: databases, caching, distributed latency, and cost
 ```
 
 ---
+
+
+Suppose 80% of my program can run on multiple cores, but 20% must run sequentially.
+Even with infinite cores, I can’t make the program run faster than 5× its original time.
+This is exactly what Amdahl’s Law predicts — the serial part limits the overall speedup
