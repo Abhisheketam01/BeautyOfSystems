@@ -66,3 +66,11 @@ B	3.0
 Total	6.0
 
 Concurrency is simulated: tasks appear sequential, but system could switch between them if multitasking.
+
+Comparison
+Approach	Total Time (s)	Notes
+Single-threaded	6.0	Tasks run one after another
+Multi-threaded	3.0	Tasks run in parallel on multiple cores
+
+This simple experiment proves the power of parallelism.
+Concurrency allows multiple tasks to be managed simultaneously, but true parallelism is what speeds up execution.
