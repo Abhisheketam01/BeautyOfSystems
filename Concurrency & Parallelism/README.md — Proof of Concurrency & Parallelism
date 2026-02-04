@@ -1,0 +1,47 @@
+# Proof of Concurrency & Parallelism
+
+This repository demonstrates **basic concurrency and parallelism concepts** in C with human-readable explanations, simple code, and numerical results.
+
+---
+
+## 1️⃣ Concepts Overview
+
+### Concurrency
+- **Definition:** Ability of a system to handle multiple tasks at the same time (can be simulated on a single-core CPU).
+- **Example:** Running a browser, music player, and file download simultaneously.
+- **Key idea:** Tasks appear to run simultaneously, even if CPU switches between them.
+
+### Parallelism
+- **Definition:** True simultaneous execution of tasks using multiple CPU cores.
+- **Example:** Multi-threaded programs using 4 cores to process data faster.
+- **Key idea:** Hardware executes multiple threads at the same time to speed up computation.
+
+---
+
+## 2️⃣ Simple Proof of Concurrency
+
+**Code Example (Single-threaded simulation):**
+
+```c
+#include <stdio.h>
+#include <time.h>
+
+void taskA() {
+    for (long i = 0; i < 100000000; i++);
+}
+
+void taskB() {
+    for (long i = 0; i < 100000000; i++);
+}
+
+int main() {
+    clock_t start = clock();
+
+    taskA(); // runs first
+    taskB(); // runs second
+
+    clock_t end = clock();
+    double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+
+    printf("Total time (single-threaded): %.2f seconds\n", time_taken);
+}
