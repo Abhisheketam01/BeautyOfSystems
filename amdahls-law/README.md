@@ -174,5 +174,3 @@ How this maps to real systems: databases, caching, distributed latency, and cost
 ```
 
 ---
-
-If you want, I can also rewrite this to be a **single polished README only** (no extra sections), which is usually the most “professional GitHub” presentation.
