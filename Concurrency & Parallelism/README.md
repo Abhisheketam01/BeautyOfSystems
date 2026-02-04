@@ -74,3 +74,49 @@ Multi-threaded	3.0	Tasks run in parallel on multiple cores
 
 This simple experiment proves the power of parallelism.
 Concurrency allows multiple tasks to be managed simultaneously, but true parallelism is what speeds up execution.
+
+
+#include <stdio.h>
+#include <omp.h>
+
+int main() {
+    double start = omp_get_wtime();
+
+    #pragma omp parallel sections
+    {
+        #pragma omp section
+        for (long i = 0; i < 100000000; i++);
+
+        #pragma omp section
+        for (long i = 0; i < 100000000; i++);
+    }
+
+    double end = omp_get_wtime();
+    printf("Total time (parallel): %.2f seconds\n", end - start);
+}
+
+
+Explanation:
+
+#pragma omp parallel sections runs tasks simultaneously on multiple cores.
+
+Total time ≈ max(time(taskA), time(taskB)) instead of sum.
+
+Math Proof:
+
+Task	Time (s)
+A	3.0
+B	3.0
+Total	3.0
+
+Parallelism reduces total runtime because tasks truly execute at the same time.
+
+Comparison
+Approach	Total Time (s)	Notes
+Single-threaded	6.0	Tasks run one after another
+Multi-threaded	3.0	Tasks run in parallel on multiple cores
+
+This simple experiment proves the power of parallelism.
+Concurrency allows multiple tasks to be managed simultaneously, but true parallelism is what speeds up execution.
+
+
