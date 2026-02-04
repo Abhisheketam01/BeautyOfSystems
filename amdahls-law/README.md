@@ -1,4 +1,3 @@
-Here is a cleaner, GitHub-ready rewrite. It keeps the substance, removes the “hype” tone, and reads like a professional engineering repo.
 
 ---
 
